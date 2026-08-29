@@ -49,8 +49,8 @@ bool ckFaceHasAnyOtherRels(const std::vector<struct result> &results,
     auto oth = (r.x == f) ? r.y : r.x;
     all_filecodes.insert(oth.i);
     if (r.res == Relation::Equals
-    || r.res == Relation::Included && r.x == f
-    || r.res == Relation::Includes && r.y == f) {
+    || (r.res == Relation::Included && r.x == f)
+    || (r.res == Relation::Includes && r.y == f)) {
       where_exists.insert(oth.i);
       continue;
     }
@@ -102,6 +102,8 @@ std::string statements(struct result r, std::vector<struct Model> faces) {
     return st("A", B, A);
   case Relation::Intersects:
     return st("I", A, B);
+  case Relation::Irrelates:
+    return "";
   }
   return "";
 }
