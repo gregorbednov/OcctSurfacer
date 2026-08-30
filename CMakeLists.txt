@@ -30,13 +30,14 @@ target_link_libraries(OCCTSurfacer
 
 
 if(OpenMP_CXX_FOUND)
-    target_compile_options(OCCTSurfacer PUBLIC -Xpreprocessor -fopenmp)
-    target_link_libraries(OCCTSurfacer PUBLIC omp)
+    target_link_libraries(OCCTSurfacer PUBLIC OpenMP::OpenMP_CXX)
     target_compile_definitions(OCCTSurfacer PUBLIC ENABLE_OPENMP)
 else()
     message(WARNING "OpenMP not found. The program will be built without OpenMP support.")
     target_compile_definitions(OCCTSurfacer PUBLIC DISABLE_OPENMP)
 endif()
+
+install(TARGETS OCCTSurfacer RUNTIME DESTINATION bin)
 
 include(CTest)
 enable_testing()
