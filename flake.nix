@@ -28,6 +28,8 @@
         ];
 
         cmakeFlags = [ "-DBUILD_TESTING=OFF" ];
+
+        meta.mainProgram = "OCCTSurfacer";
       };
     };
 }
