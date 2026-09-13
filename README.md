@@ -1,9 +1,9 @@
-# OcctSurfaces
+# OCCTSurfacer
 
-The OcctSurfacer intersects B-Rep parts and shows a full list of relations in
+The OCCTSurfacer intersects B-Rep parts and shows a full list of relations in
 two possible notations, named and syllogical.
 
-## The idea behind OcctSurfacer
+## The idea behind OCCTSurfacer
 
 1. Named notation have such possible results to show for each surface pair:
 
@@ -43,23 +43,23 @@ To list relations with their names, send a B-Rep filenames list to stdin with
 `-named` arg:
 
 ```sh
-OcctSurfacer -named < brep_filename_list.txt
+OCCTSurfacer -named < brep_filename_list.txt
 ```
 
 By default, `Irrelates` relations are hidden. To show it too, pass `-irrelates`
 after `-named`:
 
 ```sh
-OcctSurfacer -named -irrelates < brep_filename_list.txt
+OCCTSurfacer -named -irrelates < brep_filename_list.txt
 ```
 
 --------------------------------------------------------------------------------
 
-The main objective of OcctSurfacer is *extracting facts*, so to use logical
+The main objective of OCCTSurfacer is *extracting facts*, so to use logical
 notation you can pass it without additional arguments:
 
 ```sh
-OcctSurfacer < brep_filename_list.txt
+OCCTSurfacer < brep_filename_list.txt
 ```
 
 ## Building and installation
