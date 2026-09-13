@@ -1,0 +1,7 @@
+on: [push]
+jobs:
+  build-installer:
+    runs-on: builder
+    steps:
+      - uses: https://code.forgejo.org/actions/checkout@v4
+      - run: nix build .
